@@ -11,24 +11,22 @@
 
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
-import messages from './messages';
-import styled from 'styled-components';
 
-export default class HomePage extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
+import messages from './messages';
+import Header from './Header';
+import Navigation from './Navigation';
+
+
+// eslint-disable-line react/prefer-stateless-function
+class HomePage extends React.PureComponent {
   render() {
-    const Title = styled.h1`
-      font-size: 1.5em;
-      text-align: center;
-      color: palevioletred;
-    `;
     return (
       <div>
-        <h1>
-          <FormattedMessage {...messages.header} />
-        </h1>
-        <Title>asdf</Title> 
-        <button type="button" className="btn btn-primary">Primary</button>
+        <Header />
+        <Navigation />
       </div>
     );
   }
 }
+
+export default HomePage;
