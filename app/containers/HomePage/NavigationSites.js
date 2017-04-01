@@ -1,25 +1,26 @@
 import React from 'react';
+import styled from 'styled-components';
+
+const Wrapper = styled.div`
+  margin-right: 50px;
+`;
 
 // eslint-disable-line react/prefer-stateless-function
 class NavigationSites extends React.PureComponent {
   render() {
     return (
-      <div>
-        <h1>NavigationSites here</h1>
-        <div className="dropdown">
-          <button className="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-            Dropdown
-            <span className="caret"></span>
-          </button>
-          <ul className="dropdown-menu" aria-labelledby="dropdownMenu1">
+      <Wrapper>
+        <div className="btn-group">
+          <button type="button" className="btn btn-default">Select Site</button>
+          <button type="button" data-toggle="dropdown" className="btn btn-default dropdown-toggle"><span className="caret"></span></button>
+          <ul className="dropdown-menu">
             <li><a href="#">Action</a></li>
             <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li role="separator" className="divider"></li>
+            <li className="divider"></li>
             <li><a href="#">Separated link</a></li>
           </ul>
         </div>
-      </div>
+      </Wrapper>
     );
   }
 }

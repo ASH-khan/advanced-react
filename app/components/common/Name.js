@@ -1,11 +1,22 @@
 import React, { Component } from 'react';
+import styled from 'styled-components';
+
+const Wrapper = styled.div`
+  margin: .67em 0;
+  font-size: 2em;
+  flex: 2 0px;
+  text-align: center;
+`;
+
+const AppName = styled.p`
+`;
 
 class Name extends Component {
   render() {
     return (
-      <div>
-        <h1>Name</h1>
-      </div>
+      <Wrapper>
+        <AppName>Planner</AppName>
+      </Wrapper>
     );
   }
 }

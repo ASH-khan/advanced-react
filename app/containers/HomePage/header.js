@@ -1,15 +1,29 @@
 import React, { Component } from 'react';
+import styled from 'styled-components';
 import { Logo, Name, SwitchApps, Login } from '../../components/common';
+
+//
+const Wrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: stretch;
+  padding: 0 50px 0 50px;
+  margin-top: 40px;
+  
+`;
+
 
 export default class Header extends Component {
   render() {
     return (
-      <div>
+      <Wrapper>
         <Logo />
         <Name />
         <SwitchApps />
         <Login />
-      </div>
+      </Wrapper>
     );
   }
 }
