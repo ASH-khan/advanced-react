@@ -17,11 +17,11 @@ class SwitchApps extends Component {
             <i className="fa fa-bars" aria-hidden="true"></i>
           </span>
           <ul className="dropdown-menu" aria-labelledby="dropdownMenu1">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
+            <li role="presentation"><a href="#" role="menuitem">Action</a></li>
+            <li role="presentation"><a href="#" role="menuitem">Another action</a></li>
+            <li role="presentation"><a href="#" role="menuitem">Something else here</a></li>
             <li role="separator" className="divider"></li>
-            <li><a href="#">Separated link</a></li>
+            <li role="presentation"><a href="#">Separated link</a></li>
           </ul>
         </div>
       </Wrapper>
