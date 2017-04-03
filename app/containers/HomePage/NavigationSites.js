@@ -7,35 +7,46 @@ import 'rc-select/assets/index.css';
 
 const Wrapper = styled.div`
   margin-right: 50px;
+  margin-bottom: 20px;
 `;
 
 // eslint-disable-line react/prefer-stateless-function
 const NavigationSites = React.createClass({
   getInitialState() {
     return {
-      value: 'Select your Site',
+      places : ['Site1', 'Site2', 'Site3', 'Site4', 'Site5', 'Site6', 'Site7'],
+      value : 'Select your Site',
     };
   },
 
-  onChange(e) {
+  onInputChange (event) {
     let value;
-    if (e && e.target) {
-      value = e.target.value;
+    if (event && event.target) {
+      value = event.target.value;
     } else {
-      value = e;
+      value = event;
     }
     console.log('onChange', value);
+
     this.setState({
       value,
     });
   },
 
-  onBlur(v) {
+  onBlur (v) {
     console.log('onBlur', v);
   },
 
-  onFocus() {
+  onFocus () {
     console.log('onFocus');
+  },
+
+  getPlaces () {
+      let places = this.state.places;
+      places = places.map((i) => {
+      return <Option key={i} text={String(i)}>{i}</Option>
+    })
+    return places;
   },
 
   render() {
@@ -52,11 +63,9 @@ const NavigationSites = React.createClass({
               allowClear
               optionLabelProp="children"
               optionFilterProp="text"
-              onChange={this.onChange}
+              onChange={this.onInputChange}
             >
-              {['Site1', 'Site2', 'Site3', 'Site4', 'Site5', 'Site6', 'Site7'].map((i) => {
-                return <Option key={i} text={String(i)}>{i}</Option>;
-              })}
+              {this.getPlaces()}
             </Select>
 
         </Wrapper>

@@ -13,18 +13,20 @@ const Wrapper = styled.div`
 const NavigationFloors = React.createClass({
   getInitialState() {
     return {
+      floors : ['Floor1', 'Floor2', 'Floor3', 'Floor4', 'Floor5', 'Floor6', 'Floor7'],
       value: 'Select your Floor',
     };
   },
 
-  onChange(e) {
+  onInputChange(event) {
     let value;
-    if (e && e.target) {
-      value = e.target.value;
+    if (event && event.target) {
+      value = event.target.value;
     } else {
-      value = e;
+      value = event;
     }
     console.log('onChange', value);
+
     this.setState({
       value,
     });
@@ -38,6 +40,14 @@ const NavigationFloors = React.createClass({
     console.log('onFocus');
   },
 
+  getFloors () {
+    let floors = this.state.floors;
+    floors = floors.map((i) => {
+      return <Option key={i} text={String(i)}>{i}</Option>;
+    })
+    return floors;
+  },
+
   render() {
 
     return (
@@ -47,17 +57,15 @@ const NavigationFloors = React.createClass({
             value={this.state.value}
             placeholder="Select Your Floor"
             dropdownMenuStyle={{ maxHeight: 200, overflow: 'auto' }}
-            style={{ width: 300 }}
+            style={{ width: 250 }}
             onBlur={this.onBlur}
             onFocus={this.onFocus}
             allowClear
             optionLabelProp="children"
             optionFilterProp="text"
-            onChange={this.onChange}
+            onChange={this.onInputChange}
           >
-            {['Floor1', 'Floor2', 'Floor3', 'Floor4', 'Floor5', 'Floor6', 'Floor7'].map((i) => {
-              return <Option key={i} text={String(i)}>{i}</Option>;
-            })}
+            {this.getFloors()}
           </Select>
         </Wrapper>
     );
