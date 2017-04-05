@@ -1,5 +1,6 @@
  import React, { Component } from 'react';
  import styled from 'styled-components';
+ import MenuIcon from '-!babel-loader!svg-react-loader!../../images/menu.svg';
 
  const Wrapper = styled.div`
   margin: .67em 0;
@@ -14,7 +15,7 @@ class SwitchApps extends Component {
       <Wrapper>
         <div className="dropdown">
           <span className=" dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-            <i className="fa fa-bars" aria-hidden="true"></i>
+            <MenuIcon />
           </span>
           <ul className="dropdown-menu" aria-labelledby="dropdownMenu1">
             <li role="presentation"><a href="http://stackoverflow.com/" role="menuitem" target="_blank">Action</a></li>

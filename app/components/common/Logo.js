@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import BrandingLogo from '-!babel-loader!svg-react-loader!../../images/logo.svg';
 
 const Wrapper = styled.div`
   margin: .67em 0;
@@ -14,7 +15,7 @@ class Logo extends Component {
   render() {
     return (
       <Wrapper>
-        <AppLogo>Xenio</AppLogo>
+        <BrandingLogo />
       </Wrapper>
     );
   }

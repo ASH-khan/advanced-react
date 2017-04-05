@@ -8,11 +8,15 @@ const Wrapper = styled.div`
   text-align: right;
 `;
 
+const LoginButton = styled.button`
+   margin-bottom: 4px;
+`
+
 class Login extends Component {
   render() {
     return (
       <Wrapper>
-        <button className='btn btn-primary'>Login</button>
+        <LoginButton className='btn btn-primary'>Login</LoginButton>
       </Wrapper>
     );
   }
