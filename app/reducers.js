@@ -9,6 +9,9 @@ import { LOCATION_CHANGE } from 'react-router-redux';
 
 import languageProviderReducer from 'containers/LanguageProvider/reducer';
 
+import { reducer as formReducer } from 'redux-form';
+import { LOGIN_USER } from './containers/HomePage/actions';
+
 /*
  * routeReducer
  *
@@ -33,6 +36,7 @@ function routeReducer(state = routeInitialState, action) {
         locationBeforeTransitions: action.payload,
       });
     default:
+      console.log('routereducerdefault----\n', state);
       return state;
   }
 }
@@ -40,9 +44,32 @@ function routeReducer(state = routeInitialState, action) {
 /**
  * Creates the main reducer with the asynchronously loaded ones
  */
+
+const TEST_INITIAL_STATE = {
+  lol: 'lolhaha',
+  all: [],
+  test: null,
+};
+
+const testReducer =  (state = TEST_INITIAL_STATE, action) => {
+  switch(action.type) {
+    case LOGIN_USER:
+      return { ...state, test: 'haha' };
+    default:
+      console.log('testreducerdefault----\n', state);
+      return state;
+  }
+}
+
+
+
 export default function createReducer(asyncReducers) {
+  console.log('routeReducer-----\n', routeReducer);
+  console.log('testReducer-----\n', testReducer);
   return combineReducers({
     route: routeReducer,
+    form: formReducer,
+    test: testReducer,
     language: languageProviderReducer,
     ...asyncReducers,
   });

@@ -22,7 +22,6 @@ class HomePage extends React.PureComponent {
   render() {
     return (
       <div>
-        
         <Header />
         <Navigation />
       </div>

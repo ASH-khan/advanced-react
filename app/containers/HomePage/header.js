@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import { Logo, Name, SwitchApps, Login } from '../../components/common';
+import { Logo, Name, SwitchApps } from '../../components/common';
+import Login from './Login.js';
 
-//
 const Wrapper = styled.div`
   display: flex;
   flex-direction: row;
